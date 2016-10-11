@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+        function setup() {
+            createCanvas(800,800);
+            
+            
+            // The core
+            fill(255,153,0);
+            stroke(255,255,153);
+            ellipse(390,255,75,75);
+            
+            // Petals
+            fill(0,153,255);
+            strokeWeight(3);
+            stroke(51,0,255);
+            ellipse(390,165,105,105);// top
+            ellipse(309,230,105,105);// left
+            ellipse(340,330,105,105);// bottom left
+            ellipse(475,230,105,105);// right
+            ellipse(446,329,105,105);// bottom right
+            line(375,245,400,245);// top
+            line(365,255,410,255);// middle
+            line(375,265,400,265);// bottom
+       
+
+            //Stem
+            fill(247,124,179);
+            stroke(232,167,220);
+            rectMode(CENTER);
+            rect(393,538,8,370);
+            
+            // right leaf
+            translate(width/1.5, height/1.5);
+            rotate(PI/-0.8);
+            fill(105,240,123);
+            ellipse(100,200,80,200);
+            
+            // left leaf
+            translate(width/10, height/20);
+            rotate(PI/.22);
+            ellipse(30,80,80,250);
+           
+            //words
+            rotate(90);
+            stroke(105,240,123);
+            fill(0,153,255);
+            textSize(40);
+            text("Blue Petals",90,50,50,100);
+        }
+
+        function draw() {
+            
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/jessicac3732/p5js/blob/gh-pages/Zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
