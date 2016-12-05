@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+    
+        var x, y, w, h;
+        var penup;
+        var r,g,b;
+        function setup() {
+            b = 254;
+            createCanvas(600,600);
+            x = width/2;
+            y = height/2;
+            w = 20;
+            h = 20;
+            stroke(0,0,254);
+            ellipse(x,y,w,h);
+            background(254);
+            penup = false;
+        }
+
+        function draw() {
+                
+            // redraw ellipse
+            if(!penup){
+                stroke(0,0,b);
+                fill(0,0,b);
+                ellipse(x,y,w,h);
+                
+            }
+            // bigger
+          if (keyIsDown(68)){ //d
+                w = w + 5;
+                h = h + 5;
+            }
+        }
+        function keyPressed(){
+            //smaller
+            if (keyIsDown(70)){ //f
+                w = w - 5;
+                h = h - 5;
+            }
+           // color change
+           if (keyIsDown(71)){ //g
+                b = random(0,254);
+                
+            }
+            //movement
+            if(keyCode == UP_ARROW){
+                y = y-10;
+            }
+            if(keyCode == DOWN_ARROW){
+                y = y+10;
+            }
+            if(keyCode == RIGHT_ARROW){
+                x = x+10;
+            }
+            if(keyCode == LEFT_ARROW){
+                x = x-10;
+            }
+            
+            if(key.toLowerCase() == 'a' ){ // pen up
+                    penup = true;
+            }
+            else if(key.toLowerCase() == 's'){ // pen down
+                penup = false;
+            }
+            if(key.toLowerCase() == 'h') { // clear
+                background(254);
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/jessicac3732/p5js/blob/gh-pages/key-paint.html?footer=0"></script>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
